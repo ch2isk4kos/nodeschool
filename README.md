@@ -1,5 +1,7 @@
 # [NodeSchool](https://nodeschool.io): Workshoppers
 
+![NodeSchool Logo](https://tableflip.io/img/logos/nodeschool.png)
+
 Open Source lesson modules associated with NodeSchool.
 
 ## Core
