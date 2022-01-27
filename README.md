@@ -8,4 +8,5 @@
   <li> javascripting</li>
   <li> touch MODULE_NAME.js</li>
   <li> javascripting verify FILE_NAME.js</li>
+  <li> npm uninstall -g javascripting</li>
 </ul>
