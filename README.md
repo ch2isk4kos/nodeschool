@@ -6,5 +6,5 @@
 <ul>
   <li>> mkdir javascripting && cd javascripting</li>
   <li>> touch introduction.js</li>
-  <li>> javascripting verify introduction.js</li>
+  <li>> javascripting verify FILE_NAME</li>
 </ul>
