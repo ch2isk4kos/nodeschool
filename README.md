@@ -4,11 +4,12 @@ Open Source lesson modules associated with NodeSchool.
 
 ## Core
 
-<p>JavaScripting</p>
-<ul>
-  <li> mkdir javascripting && cd javascripting</li>
-  <li> javascripting</li>
-  <li> touch MODULE_NAME.js</li>
-  <li> javascripting verify FILE_NAME.js</li>
-  <li> npm uninstall -g javascripting</li>
-</ul>
+Essential skills for working with NodeJs.
+
+### [JavaScripting](https://github.com/workshopper/javascripting)
+
+- mkdir javascripting && cd javascripting
+- javascripting
+- touch MODULE_NAME.js
+- javascripting verify FILE_NAME.js
+- npm uninstall -g javascripting
