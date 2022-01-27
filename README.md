@@ -1,6 +1,6 @@
 # [NodeSchool](https://nodeschool.io): Workshoppers
 
-Open Source lesson modules associated with NodeScchool.
+Open Source lesson modules associated with NodeSchool.
 
 ## Core
 
