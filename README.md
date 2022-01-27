@@ -1,5 +1,6 @@
-# [Nodeschool](https://nodeschool.io): Workshoppers
+# [NodeSchool](https://nodeschool.io): Workshoppers
 
+Open Source lesson modules associated with NodeScchool.
 ## Core
 
 <p>JavaScripting</p>
