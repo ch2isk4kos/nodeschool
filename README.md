@@ -8,7 +8,7 @@ Open Source lesson modules associated with NodeSchool.
 
 Essential skills for working with NodeJs.
 
-### [javaScripting](https://github.com/workshopper/javascripting)
+### [javascripting](https://github.com/workshopper/javascripting)
 
 - mkdir javascripting && cd javascripting
 - javascripting
