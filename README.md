@@ -16,4 +16,4 @@ Essential skills for working with NodeJs.
 - javascripting verify FILE_NAME.js
 - npm uninstall -g javascripting
 
-### [leanyounode](https://github.com/workshopper/learnyounode)
+### [learnyounode](https://github.com/workshopper/learnyounode)
