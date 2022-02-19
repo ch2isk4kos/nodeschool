@@ -28,8 +28,10 @@
 
   » chunk is the value to be written, commonly a Buffer converted from the
     string you passed to stream.write().
+
   » encoding, if the chunk is a string, will be the character encoding for
     the string. Otherwise it may be ignored.
+    
   » callback function that will be called when the processing for the
     suppliedchunk is complete.
 
@@ -41,9 +43,9 @@
   To write data to a writable stream you need to call the write() method on
   the stream instance.
 
-       readable.on('data', (chunk) => {
-         writable.write(chunk)
-       })
+    readable.on('data', (chunk) => {
+      writable.write(chunk)
+    })
 
   Also you can use the pipe method, that we'd learned before.
 
