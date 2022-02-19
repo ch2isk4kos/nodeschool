@@ -55,6 +55,15 @@
 
   To convert a buffer to a string, call buffer.toString().
 */
+// STREAM-ADVENTURE SOLUTION:
+const through = require("through2");
+
+const write = through(function (buffer, _, next) {
+  this.push(buffer.toString().toUpperCase());
+  next();
+});
+process.stdin.pipe(write).pipe(process.stdout);
+
 // WITHOUT through2 DEPENDENCY SOLUTION:
 // const { Transform } = require("stream");
 
@@ -65,12 +74,3 @@
 //   },
 // });
 // process.stdin.pipe(uppercaserer).pipe(process.stdout);
-
-// STREAM-ADVENTURE SOLUTION:
-const through = require("through2");
-
-const write = through(function (buffer, _, next) {
-  this.push(buffer.toString().toUpperCase());
-  next();
-});
-process.stdin.pipe(write).pipe(process.stdout);
