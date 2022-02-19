@@ -1,6 +1,6 @@
 # [NodeSchool](https://nodeschool.io): Workshoppers
 
-Open Source lesson modules associated with NodeSchool.
+Open Source workshops provided by NodeSchool.
 
 ![NodeSchoolLogo](https://tableflip.io/img/logos/nodeschool.png)
 
