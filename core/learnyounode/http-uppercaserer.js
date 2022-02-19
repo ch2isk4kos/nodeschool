@@ -33,32 +33,53 @@
 const http = require("http");
 const map = require("through2-map");
 
-// const server = http.createServer((inStream, outStream) => {
-//   if (inStream.method == "POST") {
-//     inStream
-//       .pipe(
-//         map((chunk) => {
-//           return chunk.toString().toUpperCase();
-//         })
-//       )
-//       .pipe(outStream);
+const server = http.createServer((inStream, outStream) => {
+  if (inStream.method == "POST") {
+    inStream
+      .pipe(
+        map((chunk) => {
+          return chunk.toString().toUpperCase();
+        })
+      )
+      .pipe(outStream);
+  }
+});
+
+server.listen(process.argv[2], () => {
+  console.log(`Server listening on ${process.argv[2]}`);
+});
+
+// LEARNYOUNODE SOLUTION 1:
+// const http = require("http");
+// const map = require("through2-map");
+
+// const server = http.createServer(function (req, res) {
+//   if (req.method !== "POST") {
+//     return res.end("send me a POST\n");
 //   }
+
+//   req
+//     .pipe(
+//       map(function (chunk) {
+//         return chunk.toString().toUpperCase();
+//       })
+//     )
+//     .pipe(res);
 // });
 
-// server.listen(process.argv[2], () => {
-//   console.log(`Server listening on ${process.argv[2]}`);
-// });
+// server.listen(Number(process.argv[2]));
 
-http
-  .createServer(function (inStream, outStream) {
-    if (inStream.method == "POST") {
-      inStream
-        .pipe(
-          map(function (chunk) {
-            return chunk.toString().toUpperCase();
-          })
-        )
-        .pipe(outStream);
-    }
-  })
-  .listen(process.argv[2]);
+// LEARNYOUNODE SOLUTION 2:
+// http
+//   .createServer(function (inStream, outStream) {
+//     if (inStream.method == "POST") {
+//       inStream
+//         .pipe(
+//           map(function (chunk) {
+//             return chunk.toString().toUpperCase();
+//           })
+//         )
+//         .pipe(outStream);
+//     }
+//   })
+//   .listen(process.argv[2]);
