@@ -6,7 +6,7 @@ Open Source workshops provided by NodeSchool.
 
 ## Core
 
-Essential skills for working with NodeJs.
+Essential skills for working with NodeJS.
 
 ### [javascripting](https://github.com/workshopper/javascripting)
 
@@ -20,3 +20,9 @@ Essential skills for working with NodeJs.
 ### [learnyounode](https://github.com/workshopper/learnyounode)
 
 ### [stream-adventure](https://github.com/workshopper/stream-adventure)
+
+## Electives
+
+Workshops on popular libraries or styles of writing NodeJS.
+
+### [functional-javascript-workshop](https://github.com/timoxley/functional-javascript-workshop)
