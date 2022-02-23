@@ -21,6 +21,8 @@ Essential skills for working with NodeJS.
 
 ### [stream-adventure](https://github.com/workshopper/stream-adventure)
 
+</br>
+
 ## Electives
 
 Workshops on popular libraries or styles of writing NodeJS.
