@@ -27,4 +27,9 @@ Essential skills for working with NodeJS.
 
 Workshops on popular libraries or styles of writing NodeJS.
 
+### [count-to-6](https://github.com/domenic/count-to-6)
+
+Intro to features ES6 features.
 ### [functional-javascript-workshop](https://github.com/timoxley/functional-javascript-workshop)
+
+Fundamental programming features of ES5.
