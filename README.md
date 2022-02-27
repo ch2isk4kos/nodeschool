@@ -34,3 +34,7 @@ Intro to ES6 features.
 ### [functional-javascript-workshop](https://github.com/timoxley/functional-javascript-workshop)
 
 Fundamental programming features of ES5.
+
+### [learnyoubash](https://github.com/denysdovhan/learnyoubash)
+
+Learn how to use the terminal and bash scripting.
