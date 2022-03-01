@@ -117,4 +117,3 @@ using the pwd command. You may want to change the current directory. You
 can do this using the cd command like so:
 
 **>** `cd ~/Projects/my-awesome-project`
-
