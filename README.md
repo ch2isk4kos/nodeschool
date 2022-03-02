@@ -38,3 +38,7 @@ Fundamental programming features of ES5.
 ### [learnyoubash](https://github.com/denysdovhan/learnyoubash)
 
 Learn how to use the terminal and bash scripting.
+
+### [learnyoureact](https://github.com/workshopper/learnyoureact)
+
+Learn a React.js and server side rendering.
