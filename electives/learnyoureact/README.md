@@ -117,7 +117,7 @@ ReactDOM.render(myElement, document.getElementById('example'));
 
 </br>
 
-### Challenge
+### Challenge 2
 
 </br>
 
@@ -169,3 +169,105 @@ When you are ready run node program.js and access <http://localhost:3000> to
 see the HTML output in the browser.
 
 Finally, run `learnyoureact verify program.js` to check your solution.
+
+</br>
+
+## PROPS (Exercise 3 of 11)
+
+Now let's learn to pass values from a parent component to a child component.
+
+A child component can have values handed to it either through attributes, or through nested content.
+
+```jsx
+<ChildComponent some-attribute="this gets passed">So does this</ChildComponent>
+```
+
+</br>
+
+### Challenge 3
+
+</br>
+
+Modify `TodoList` in `index.jsx` like below, adding `Todo`.
+
+Before you start, you may want to check your current `index.jsx` into source control,</br>
+or create a new `index.jsx` for this exercise.
+
+```jsx
+import React from 'react';
+
+export default class TodoBox extends React.Component {
+  // Omitted
+}
+
+class TodoList extends React.Component {
+  render() {
+    return (
+      <div className="todoList">
+        <table style={{border: "2px solid black"}}>
+          <tbody>
+            <Todo title="Shopping">Milk</Todo>
+            <Todo title="Hair cut">13:00</Todo>
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+}
+
+class Todo extends React.Component {
+  // Write code here
+  render() {
+    return (
+      <tr>
+        <td style="border:1px solid black;">{this.props.title}</td>
+        <td style="border:1px solid black;">Milk</td>
+      </tr>
+    );
+  }
+}
+
+class TodoForm extends React.Component {
+  // Omitted
+}
+```
+
+At the "Write code here" comment, write some JSX that results in the HTML below.
+
+The "Omitted" comments are sections that are omitted here to save space,</br>
+but should remain the same as your previous solution -- don't change them.
+
+</br>
+
+Within `Todo`, you can get the value of the title attribute set in TodoList</br>
+(the parent component) by using `{this.props.title}`.
+
+</br>
+
+Likewise, you can get the values `Milk` and `13:00` by using `{this.props.children}`.
+
+Note: you don't have to change server-side code (program.js).
+
+```jsx
+<div class="todoList">
+  <table style="border:2px solid black;">
+    <tbody>
+      <tr>
+        <td style="border:1px solid black;">Shopping</td>
+        <td style="border:1px solid black;">Milk</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid black;">Hair cut</td>
+        <td style="border:1px solid black;">13:00</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+</br>
+
+After writing code, run node program.js and visit <http://localhost:3000> to</br>
+make sure it looks right.
+
+Once you're confident, run `learnyoureact verify program.js`.
