@@ -30,12 +30,23 @@ class TodoList extends React.Component {
 }
 
 class Todo extends React.Component {
-  // Write code here
+  constructor(props) {
+    super(props);
+    this.state = { isChecked: false}
+  }
+
+  handleOnChange(e) {
+    this.setState({ isChecked: e.target.isChecked})
+  }
+
   render() {
     return (
       <tr>
-        <td style={{ border: "1px solid black;"}}>{this.props.title}</td>
-        <td style={{ border: "1px solid black;"}}>{this.props.children}</td>
+        <td style={{ border: "1px solid black;" }}>
+          <input type="checkbox" isChecked={this.state.isChecked} onChange={this.handleOnChange} />
+        </td>
+        <td style={{ border: "1px solid black;" }}>{this.props.title}</td>
+        <td style={{ border: "1px solid black;" }}>{this.props.children}</td>
       </tr>
     );
   }
