@@ -9,9 +9,7 @@ First, create the directory where you will write your code.
 It needs to contain a [package.json](https://docs.npmjs.com/getting-started/using-a-package.json) file
 for npm to know in which folder to install the subsequent packages - npm init does this for us.
 
-### NOTE
-
-You can change learnyoureact to any name you like.
+**NOTE**: You can change learnyoureact to any name you like.
 
 `$ mkdir learnyoureact; cd learnyoureact; npm init -y;`
 
@@ -149,7 +147,7 @@ class TodoForm extends React.Component {
 
 Implement the missing code above using JSX notation to output the HTML below.
 
-Note: you don't have to change server-side code (program.js).
+**NOTE**: you don't have to change server-side code (program.js).
 
 Don't forget render and return! :-)
 
@@ -238,7 +236,7 @@ Within `Todo`, you can get the value of the title attribute set in TodoList</br>
 
 Likewise, you can get the values `Milk` and `13:00` by using `{this.props.children}`.
 
-Note: you don't have to change server-side code (program.js).
+**NOTE**:you don't have to change server-side code (program.js).
 
 ```jsx
 <div class="todoList">
@@ -461,3 +459,61 @@ visiting <http://localhost:3000> in your browser.
 Once you're confident, run `learnyoureact verify program.js`.
 
 </br>
+
+## CSS (Exercise 6 of 11)
+
+Let's define styles as variables!
+
+Variables are a smart way to make changes to multiple places in our code.</br>
+Lets assign some styles to a variable and see which parts of our code we can simplify.
+
+</br>
+
+### Challenge 6
+
+</br>
+
+Add style to index.jsx like below.
+
+Before you start, you may want to check your current index.jsx into source
+control, or create a new index.jsx for this exercise.
+
+```jsx
+import React from 'react';
+
+export default class TodoBox extends React.Component {
+  // Omitted
+}
+
+class TodoList extends React.Component {
+  // Omitted
+}
+
+class Todo extends React.Component {
+  // Omitted
+}
+Todo.propTypes = {
+  // Omitted
+};
+
+class TodoForm extends React.Component {
+  // Omitted
+}
+
+let style = {
+    tableContent: {
+        border: "1px solid black"
+    }
+};
+```
+
+Now change the code to use the style variable you added.
+
+**NOTE**: Some code is a little different from this style - be careful!
+
+Inline Styles: [https://](https://)
+
+After fixing your code, test it locally by running node program.js and
+visiting <http://localhost:3000> in your browser.
+
+Once you're confident, run `learnyoureact verify program.js`.
