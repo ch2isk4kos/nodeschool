@@ -31,6 +31,10 @@ Workshops on popular libraries or styles of writing NodeJS.
 
 Intro to ES6 features.
 
+### [expressworks](https://github.com/azat-co/expressworks)
+
+Learnt the basics of the Express.js framework.
+
 ### [functional-javascript-workshop](https://github.com/timoxley/functional-javascript-workshop)
 
 Fundamental programming features of ES5.
