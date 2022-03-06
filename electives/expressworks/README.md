@@ -1,4 +1,4 @@
-# Master Express.js and have fun!
+# Master Express.js and have fun
 
 </br>
 
