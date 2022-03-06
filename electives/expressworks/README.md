@@ -34,3 +34,47 @@ app.listen(3000)
 In your solution, please use `process.argv[2]` instead of a fixed port number:
 
 `app.listen(process.argv[2])`
+
+</br>
+</br>
+
+## STATIC (Exercise 2 of 8)
+
+This exercise is about serving static assets like HTML files.</br>
+There are many ways to do it, but we want you to apply static middleware to serve the file `index.html`.
+
+Please don't use ANY routes like `app.get`. ONLY static.
+
+Your solution must listen on the port number supplied by process.argv[2].
+
+The `index.html` file is provided and usable via the path supplied by `process.argv[3]`.
+
+However, you can use your own file with this content (beware of whitespace):
+
+```js
+<html>
+  <head>
+    <title>expressworks</title>
+    <link rel="stylesheet" type="text/css" href="/main.css"/>
+  </head>
+  <body>
+    <p>I am red!</p>
+  </body>
+</html>
+```
+
+### STATIC HINTS
+
+This is how you can call static middleware assuming your static folder is public</br>
+and it's in the same folder as the main project file:
+
+`app.use(express.static('public'))`
+
+For this exercise expressworks will pass you the path in the CLI argument `process.argv[3]`.
+
+You can create a logical OR condition to use the CLI argument value</br>
+or fallback to the absolute path to the public folder.
+
+The path is constructed with path.join():
+
+`app.use(express.static(process.argv[3] || path.join(__dirname, 'public')))`
