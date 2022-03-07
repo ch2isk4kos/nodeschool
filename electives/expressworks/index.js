@@ -6,12 +6,20 @@ const app = express();
 const PORT = process.argv[2] || 3000;
 
 // middleware
+
+app.use(
+  require("stylus").middleware(
+    process.argv[3] || path.join(__dirname, "public")
+  )
+); // stylus
 app.use(express.static(process.argv[3] || path.join(__dirname, "public"))); // static files
 app.use(bodyParser.urlencoded({ extended: false })); // body-parser
 
 // pug templates
 app.set("view engine", "pug");
 app.set("views", process.argv[3] || path.join(__dirname, "templates"));
+
+// Remember that middleware is executed in the order `app.use` is called
 
 // routes
 app.get("/", function (req, res) {
