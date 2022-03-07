@@ -205,7 +205,7 @@ HTML without styles is boring so this exercise will teach you how to use Stylus 
 
 Style the HTML from the "STATIC" exercise using `Stylus` middleware.
 
-[Stylus](https://github.com/stylus/stylus) generates `.css` files on-the-fly from `.styl` files.
+**[Stylus](https://github.com/stylus/stylus)** generates `.css` files on-the-fly from `.styl` files.
 
 Your solution should listen on the port supplied by `process.argv[2]` for</br>
 `GET` requests -- one of which will be for `main.css` -- which should be automatically generated</br>
@@ -249,6 +249,8 @@ It'll look something like this:
 
 `app.use(require('stylus').middleware('/path/to/folder'))`
 
+</br>
+
 **Hint**: You can utilize `__dirname` to get an absolute path to the currently running file.
 
 The path to a folder can be not just an absolute path but a relative one:
@@ -265,3 +267,74 @@ Remember that middleware is executed in the order `app.use` is called!
 For your own projects, Stylus needs to be installed like any other dependency:
 
 `npm install stylus`
+
+</br>
+</br>
+
+## PARAM PAM PAM (Exercise 6 of 8)
+
+This exercise is about using **URL parameters**.
+
+For example, if you have `/message/526aa677a8ceb64569c9d4fb`,</br>
+then you should know how to extract that value which is an ID of the message.
+
+Create an Express.js server that processes `PUT /message/:id` requests</br>
+and produces a **SHA-1 hash** of the current date combined with the ID from the URL.
+
+For instance, if the server receives:
+
+`PUT /message/526aa677a8ceb64569c9d4fb`
+
+it will respond with a hash of the current date (as a string) and the ID.
+
+The SHA-1 can be computed like this:
+
+```js
+require('crypto')
+  .createHash('sha1')
+  .update(new Date().toDateString() + id)
+  .digest('hex')
+```
+
+Your solution must listen on the port number supplied by `process.argv[2]`.
+
+</br>
+
+### #PARAM PAM PAM HINTS
+
+Express.js apps can also be mounted to paths that contain a variable by prepending a `:`</br>
+to the beginning of a variable name **PUT requests** in any subdirectory of `/path/`:
+
+`app.put('/path/:NAME', function(req, res){ /* ... */ });`
+
+</br>
+
+The given variable is then stored in `req.params`.
+
+So, to extract parameters from within the request handlers, use:
+
+`req.params.NAME`
+
+</br>
+
+### BONUS
+
+You can use `req.param` middleware to parse the URL parameter.
+
+For example:
+
+```js
+app.param('id', function (req, res, next, id) {
+  req.id = id
+  ...
+  next()
+})
+
+app.get('/message/:id', function (req, res, next) {
+  console.log(req.id)
+  next()
+})
+```
+
+</br>
+</br>
