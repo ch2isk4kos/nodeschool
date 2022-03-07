@@ -171,6 +171,7 @@ To parse `x-www-form-urlencoded` request bodies,</br>
 Express.js can use `urlencoded()` middleware from the `body-parser` module.
 
 ```js
+// index.js
 const bodyparser = require('body-parser')
 app.use(bodyparser.urlencoded({extended: false}))
 ```
@@ -183,19 +184,84 @@ Here is how we can print characters backwards (just one way to do it):
 
 `req.body.str.split('').reverse().join('')`
 
-Extended set to true (qs) or false (querystring) determines the parser module.
-
-Read more about Connect middleware here:
+Extended set to `true` (qs) or `false` (querystring) determines the parser module.
 
 </br>
 
 **NOTE**:
 
-When creating your projects from scratch, install the body-parser dependency
-with npm by running:
+When creating your projects from scratch, install the `body-parser` dependency with npm by running:
 
 `npm install body-parser`
 
-…in your terminal.
-
 Again, the port to use is passed expressworks to the application as `process.argv[2]`.
+
+</br>
+</br>
+
+## STYLISH CSS (Exercise 5 of 8)
+
+HTML without styles is boring so this exercise will teach you how to use Stylus with Express on the fly.
+
+Style the HTML from the "STATIC" exercise using `Stylus` middleware.
+
+[Stylus](https://github.com/stylus/stylus) generates `.css` files on-the-fly from `.styl` files.
+
+Your solution should listen on the port supplied by `process.argv[2]` for</br>
+`GET` requests -- one of which will be for `main.css` -- which should be automatically generated</br>
+by your Stylus middleware.
+
+`index.html` and `main.styl` can be found in `process.argv[3]` (they are in the same directory).
+
+You could also create your own folder and use these, if you like:
+
+</br>
+
+The `main.styl` file:
+
+```css
+p
+  color red
+```
+
+</br>
+
+The `index.html` file:
+
+```html
+<html>
+  <head>
+    <title>expressworks</title>
+    <link rel="stylesheet" type="text/css" href="/main.css"/>
+  </head>
+  <body>
+    <p>I am red!</p>
+  </body>
+</html>
+```
+
+</br>
+
+### STYLISH CSS HINTS
+
+You'll want to plug in some stylus middleware using `app.use()` again.
+It'll look something like this:
+
+`app.use(require('stylus').middleware('/path/to/folder'))`
+
+**Hint**: You can utilize `__dirname` to get an absolute path to the currently running file.
+
+The path to a folder can be not just an absolute path but a relative one:
+
+`app.use(require('stylus').middleware('public'))`
+
+In addition to producing in the "STATIC" exercise, you'll need to serve static files.</br>
+Remember that middleware is executed in the order `app.use` is called!
+
+</br>
+
+**NOTE**:
+
+For your own projects, Stylus needs to be installed like any other dependency:
+
+`npm install stylus`
