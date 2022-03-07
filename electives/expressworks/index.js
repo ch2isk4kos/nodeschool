@@ -42,8 +42,12 @@ app.put("/message/:id", function (req, res) {
     .createHash("sha1")
     .update(new Date().toDateString() + id)
     .digest("hex");
-
   res.send(str);
+});
+
+app.get("/search", function (req, res) {
+  let query = req.query;
+  res.send(query);
 });
 
 // server
