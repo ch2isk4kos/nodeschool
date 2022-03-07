@@ -1,5 +1,6 @@
 const path = require("path");
 const bodyParser = require("body-parser");
+const fs = require("fs");
 const express = require("express");
 const app = express();
 
@@ -48,6 +49,19 @@ app.put("/message/:id", function (req, res) {
 app.get("/search", function (req, res) {
   let query = req.query;
   res.send(query);
+});
+
+app.get("/books", function (req, res) {
+  let filename = process.argv[3];
+  fs.readFile(filename, function (err, data) {
+    if (err) return res.sendStatus(500);
+    try {
+      books = JSON.parse(data);
+    } catch {
+      res.sendStatus(500);
+    }
+    res.json(books);
+  });
 });
 
 // server
